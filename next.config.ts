@@ -8,7 +8,9 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // https://<user>.github.io/<repo>/ — so all routes and assets need that
 // prefix. The Pages workflow sets PAGES_BASE_PATH=/aurora-site. Locally and
 // on a root-domain host the var is empty, so basePath stays undefined.
-const basePath = process.env.PAGES_BASE_PATH || "";
+// NEXT_PUBLIC_ prefix → also inlined into client bundles so assetPath() in
+// src/lib/utils.ts can prefix raw <img>/url() asset paths the same way.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   // Fully static site — `next build` emits an `out/` folder of HTML/CSS/JS

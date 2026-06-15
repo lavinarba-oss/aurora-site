@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, assetPath } from "@/lib/utils";
 
 /**
  * The kind of UI a case represents. Drives which mockup scene renders.
@@ -58,7 +58,7 @@ export function CaseVisual({
         />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={image}
+          src={assetPath(image)}
           alt={client ? `Реальный экран проекта — ${client}` : "Скриншот проекта"}
           loading="lazy"
           decoding="async"

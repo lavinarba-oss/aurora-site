@@ -18,8 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Project site lives under /aurora-site/ — see next.config.ts
-      PAGES_BASE_PATH: /aurora-site
+      # Project site lives under /aurora-site/ — see next.config.ts.
+      # NEXT_PUBLIC_ so it reaches client bundles (assetPath helper) too.
+      NEXT_PUBLIC_BASE_PATH: /aurora-site
     steps:
       - uses: actions/checkout@v4
 
