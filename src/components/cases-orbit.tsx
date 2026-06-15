@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { CASES } from "@/lib/cases";
 import { SERVICES, type ServiceSlug } from "@/lib/services";
-import { cn } from "@/lib/utils";
+import { cn, assetPath } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 
 /**
@@ -212,7 +212,7 @@ export function CasesOrbit() {
                     <div className="relative mt-3 aspect-[16/10] w-full overflow-hidden rounded-lg border border-white/[0.08] bg-[#070A1A]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={c.image}
+                        src={assetPath(c.image)}
                         alt={content.title}
                         loading="lazy"
                         decoding="async"
