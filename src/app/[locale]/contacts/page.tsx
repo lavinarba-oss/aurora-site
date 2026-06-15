@@ -38,7 +38,12 @@ export default async function ContactsPage({
   const tHero = await getTranslations("contacts.hero");
   const tCh = await getTranslations("contacts.channels");
   const tTeam = await getTranslations("contacts.team");
-  const team = tTeam.raw("people") as { name: string; role?: string }[];
+  const team = tTeam.raw("people") as {
+    name: string;
+    role?: string;
+    phone?: string;
+  }[];
+  const telHref = (phone: string) => `tel:${phone.replace(/[^+\d]/g, "")}`;
 
   const channels = [
     {
@@ -152,6 +157,14 @@ export default async function ContactsPage({
                   </span>
                   {p.role ? (
                     <span className="text-sm text-muted-foreground">{p.role}</span>
+                  ) : null}
+                  {p.phone ? (
+                    <a
+                      href={telHref(p.phone)}
+                      className="text-sm font-medium text-foreground/90 transition-colors hover:text-[var(--aurora-cyan)]"
+                    >
+                      {p.phone}
+                    </a>
                   ) : null}
                 </div>
               </GlowCard>

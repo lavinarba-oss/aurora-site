@@ -10,7 +10,10 @@ import { BrandMark } from "./brand-mark";
 export async function SiteFooter() {
   const tFooter = await getTranslations("footer");
   const tNav = await getTranslations("nav");
+  const tTeam = await getTranslations("contacts.team");
   const locale = (await getLocale()) as Locale;
+  const team = tTeam.raw("people") as { name: string; phone?: string }[];
+  const telHref = (phone: string) => `tel:${phone.replace(/[^+\d]/g, "")}`;
 
   return (
     <footer className="relative mt-24 border-t border-white/[0.06] bg-background">
@@ -52,6 +55,13 @@ export async function SiteFooter() {
           </FooterExternal>
           <FooterExternal href={SITE.telegram}>Telegram</FooterExternal>
           <FooterExternal href={SITE.whatsapp}>WhatsApp</FooterExternal>
+          {team
+            .filter((p) => p.phone)
+            .map((p) => (
+              <FooterExternal key={p.name} href={telHref(p.phone!)}>
+                {p.name}: {p.phone}
+              </FooterExternal>
+            ))}
         </FooterColumn>
       </div>
 
