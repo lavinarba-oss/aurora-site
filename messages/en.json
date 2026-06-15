@@ -1,0 +1,610 @@
+{
+  "common": {
+    "brand": "AURORA",
+    "tagline": "Full-cycle digital agency",
+    "cta": {
+      "discuss": "Discuss a project",
+      "cases": "View cases",
+      "contact": "Get in touch",
+      "learnMore": "Learn more"
+    },
+    "lang": {
+      "ru": "Русский",
+      "en": "English",
+      "short": {
+        "ru": "RU",
+        "en": "EN"
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "cases": "Cases",
+    "about": "About",
+    "blog": "Blog",
+    "contacts": "Contacts",
+    "faq": "FAQ",
+    "calculator": "Calculator"
+  },
+  "services": {
+    "hub": {
+      "eyebrow": "Services",
+      "title": "Full-stack digital delivery",
+      "subtitle": "From a prototype in a week to a mature product with a long-term support team.",
+      "sectionFeatures": "What's inside",
+      "sectionStack": "Tech stack",
+      "sectionCases": "Cases in this area",
+      "sectionFaq": "Common questions",
+      "ctaTitle": "Ready to discuss your project?",
+      "ctaSubtitle": "30 minutes — and you'll have a sense of scope, timeline and price."
+    },
+    "websites": {
+      "title": "Websites",
+      "short": "Landing pages, corporate sites, e-commerce",
+      "desc": "Next.js, custom design, SEO-ready",
+      "page": {
+        "title": "Websites that sell and don't fall apart",
+        "subtitle": "From a landing in two weeks to e-commerce on Next.js Commerce. Custom brand design, Lighthouse 95+, SEO-ready from day one.",
+        "features": {
+          "f1": {
+            "title": "Lighthouse 95+",
+            "desc": "Instant load, perfect Core Web Vitals — even on 4G"
+          },
+          "f2": {
+            "title": "Custom brand design",
+            "desc": "No Tilda templates — every page drawn for the product"
+          },
+          "f3": {
+            "title": "Headless CMS",
+            "desc": "Marketing runs content without touching code"
+          },
+          "f4": {
+            "title": "Post-launch support",
+            "desc": "A free month of iterations after launch — to polish on live data"
+          }
+        },
+        "faq": {
+          "q1": {
+            "q": "How long does it take?",
+            "a": "Landing — 2–3 weeks, corporate site — 4–6 weeks, e-commerce — 8–12 weeks."
+          },
+          "q2": {
+            "q": "How much does it cost?",
+            "a": "From $3k for a landing, from $15k for a corporate site, from $30k for e-commerce."
+          },
+          "q3": {
+            "q": "Whose hosting?",
+            "a": "Vercel, Netlify or your VPS — your call. We can move to any infrastructure."
+          },
+          "q4": {
+            "q": "What about design?",
+            "a": "Figma before development. Minimum 2 iterations included."
+          }
+        }
+      }
+    },
+    "crm": {
+      "title": "CRM systems",
+      "short": "Custom CRM and integrations",
+      "desc": "Sales, inventory and analytics automation",
+      "page": {
+        "title": "CRM you actually want to work in",
+        "subtitle": "Custom systems instead of «fields inside Bitrix24». Tailored to your process, with integrations, without the usual zoo of tabs.",
+        "features": {
+          "f1": {
+            "title": "Tailored to your process",
+            "desc": "We learn how managers really work — then we design"
+          },
+          "f2": {
+            "title": "Integrations",
+            "desc": "1C, Bitrix24, amoCRM, telephony, e-mail, inventory systems"
+          },
+          "f3": {
+            "title": "Analytics",
+            "desc": "Owner dashboards, BI exports, pipeline forecasts"
+          },
+          "f4": {
+            "title": "Roles & permissions",
+            "desc": "Granular access, action audit, safe API"
+          }
+        },
+        "faq": {
+          "q1": {
+            "q": "How do we start?",
+            "a": "1–2-week discovery: team interviews, process map, spec."
+          },
+          "q2": {
+            "q": "What if we already have amoCRM?",
+            "a": "We can build modules on top or migrate to a custom system."
+          },
+          "q3": {
+            "q": "Where does it run?",
+            "a": "Cloud (AWS / Selectel / Yandex Cloud) or on-prem — your call."
+          },
+          "q4": {
+            "q": "How much does it cost?",
+            "a": "From $18k for an MVP up to $100k+ for a mature system with integrations."
+          }
+        }
+      }
+    },
+    "bots": {
+      "title": "Telegram bots",
+      "short": "Bots for business and products",
+      "desc": "Mini Apps, payments, CRM integrations",
+      "page": {
+        "title": "Telegram as a sales and product channel",
+        "subtitle": "Mini Apps with Telegram Stars payments, booking bots, automated routines. All synced with CRM and analytics.",
+        "features": {
+          "f1": {
+            "title": "Telegram Mini Apps",
+            "desc": "Full product inside Telegram — no AppStore or Google Play"
+          },
+          "f2": {
+            "title": "Stars payments",
+            "desc": "One-tap checkout, no external page"
+          },
+          "f3": {
+            "title": "CRM integration",
+            "desc": "Leads and orders land in your CRM — no copy-pasting"
+          },
+          "f4": {
+            "title": "Analytics",
+            "desc": "Funnel, retention, anomalies — on our metrics stack"
+          }
+        },
+        "faq": {
+          "q1": {
+            "q": "How long for a Mini App?",
+            "a": "Simple bot — 1 week, Mini App with payments — 3–5 weeks."
+          },
+          "q2": {
+            "q": "How much?",
+            "a": "Bot — from $2k, Mini App — from $7k."
+          },
+          "q3": {
+            "q": "Aiogram or other stack?",
+            "a": "Usually Aiogram + FastAPI; for Mini Apps — Next.js + Telegram Web Apps SDK."
+          },
+          "q4": {
+            "q": "Can we plug in our client base?",
+            "a": "Yes — via API or direct DB connection."
+          }
+        }
+      }
+    },
+    "mobile": {
+      "title": "Mobile apps",
+      "short": "iOS and Android",
+      "desc": "React Native and native development",
+      "page": {
+        "title": "iOS and Android — without 4 teams and 8 months",
+        "subtitle": "React Native for speed and a single codebase. Native — when you need the max: AR, graphics, background work.",
+        "features": {
+          "f1": {
+            "title": "One team",
+            "desc": "React Native + Expo: one codebase, two stores"
+          },
+          "f2": {
+            "title": "Analytics & push",
+            "desc": "Amplitude/Mixpanel, OneSignal, deep links, attribution"
+          },
+          "f3": {
+            "title": "Subscriptions & payments",
+            "desc": "RevenueCat, StoreKit2, Google Play Billing v6"
+          },
+          "f4": {
+            "title": "Store releases",
+            "desc": "Metadata, screenshots, policies, review — we handle it"
+          }
+        },
+        "faq": {
+          "q1": {
+            "q": "RN or native?",
+            "a": "80% of cases — RN. Native — when you need 3D, AR or background work."
+          },
+          "q2": {
+            "q": "How long for an MVP?",
+            "a": "6–10 weeks depending on integrations."
+          },
+          "q3": {
+            "q": "Cost?",
+            "a": "From $22k for an MVP up to $60k+ for a mature app with subscriptions."
+          },
+          "q4": {
+            "q": "Support?",
+            "a": "We support, fix crashes, update SDKs, ship releases."
+          }
+        }
+      }
+    },
+    "seo": {
+      "title": "SEO & marketing",
+      "short": "Traffic and acquisition",
+      "desc": "Content strategy, technical SEO, analytics",
+      "page": {
+        "title": "Organic traffic, not empty rankings",
+        "subtitle": "Technical SEO, content strategy, analytics, experiments. We measure by revenue, not by keywords in top.",
+        "features": {
+          "f1": {
+            "title": "Technical SEO",
+            "desc": "Core Web Vitals, indexing, schema.org, sitemap, canonicals"
+          },
+          "f2": {
+            "title": "Content strategy",
+            "desc": "From search intents to editorial guidelines"
+          },
+          "f3": {
+            "title": "Analytics",
+            "desc": "GA4, Yandex.Metrika, Looker Studio, goal & attribution setup"
+          },
+          "f4": {
+            "title": "A/B & experiments",
+            "desc": "PostHog, GrowthBook — learn from data, not from gut"
+          }
+        },
+        "faq": {
+          "q1": {
+            "q": "How long till results?",
+            "a": "Technical wins in 1–2 months, content growth in 4–6 months."
+          },
+          "q2": {
+            "q": "Cost?",
+            "a": "From $1.5k/month for audit + support, from $3k/month for full product SEO."
+          },
+          "q3": {
+            "q": "What about paid ads?",
+            "a": "We can run them if needed — but it's not our main thing."
+          },
+          "q4": {
+            "q": "Who writes the content?",
+            "a": "Our editorial team — or curated for the niche."
+          }
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Full-cycle digital agency",
+      "title": "We ship digital products",
+      "titleAccent": "that actually work",
+      "subtitle": "Websites, CRM systems, Telegram bots, mobile apps — everything your business needs to grow in digital."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Full-stack digital delivery",
+      "subtitle": "From a prototype in a week to a mature product with a long-term support team."
+    },
+    "clients": {
+      "eyebrow": "Trusted by"
+    },
+    "testimonials": {
+      "eyebrow": "Voices",
+      "title": "What our clients say"
+    },
+    "trust": {
+      "eyebrow": "Numbers",
+      "items": {
+        "projects": {
+          "value": 60,
+          "suffix": "+",
+          "label": "projects shipped and in progress"
+        },
+        "years": {
+          "value": 8,
+          "suffix": " yrs",
+          "label": "of team experience in digital"
+        },
+        "industries": {
+          "value": 14,
+          "suffix": "",
+          "label": "industries, from logistics to beauty"
+        },
+        "retention": {
+          "value": 94,
+          "suffix": "%",
+          "label": "of clients return with new projects"
+        }
+      }
+    },
+    "cases": {
+      "eyebrow": "Cases",
+      "title": "What we've shipped",
+      "subtitle": "Real projects with real metrics.",
+      "viewAll": "All cases",
+      "viewCase": "View case"
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "How we work",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "desc": "We study your business, audience and success metrics"
+        },
+        "design": {
+          "title": "Design & architecture",
+          "desc": "UX flows, prototypes, tech stack"
+        },
+        "build": {
+          "title": "Development",
+          "desc": "Two-week sprints with a demo at the end of each"
+        },
+        "launch": {
+          "title": "Launch & support",
+          "desc": "QA, SEO, analytics, post-release iterations"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to discuss your project?",
+      "subtitle": "We'll show you in 30 minutes how we can help — no strings attached."
+    },
+    "robot": {
+      "hint": "tap me",
+      "messages": [
+        "Hey! I'm Aurora 👋",
+        "We build sites, CRMs & Telegram bots end-to-end",
+        "60+ projects · 8 years in digital",
+        "From prototype to launch and support",
+        "Tap me — I'll tell you more 😉"
+      ]
+    }
+  },
+  "contacts": {
+    "hero": {
+      "eyebrow": "Contacts",
+      "title": "Tell us about your project",
+      "subtitle": "We reply within a business day — usually sooner. You won't talk to a sales manager — straight to the product team."
+    },
+    "form": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "First and last name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@company.com"
+      },
+      "telegram": {
+        "label": "Telegram (optional)",
+        "placeholder": "@username"
+      },
+      "service": {
+        "label": "What can we help with",
+        "placeholder": "Pick a direction",
+        "options": {
+          "landing": "Landing page",
+          "catalog": "Online catalogue",
+          "multipage": "Multi-page website",
+          "ecommerce": "Online store",
+          "webapp": "Web application",
+          "integrations": "Integrations",
+          "automation": "Automations",
+          "design": "Design & branding",
+          "marketing": "Marketing & growth",
+          "support": "Support & maintenance",
+          "other": "Other / complex"
+        }
+      },
+      "budget": {
+        "label": "Budget",
+        "placeholder": "Pick a range",
+        "options": {
+          "small": "under $6k",
+          "medium": "$6k – $25k",
+          "large": "$25k – $60k",
+          "xl": "$60k+",
+          "unknown": "Not sure"
+        }
+      },
+      "message": {
+        "label": "Describe the project",
+        "placeholder": "What do you want to launch, timelines, priorities..."
+      },
+      "submit": "Send request",
+      "submitting": "Sending...",
+      "success": "Thanks! We'll be in touch within a business day.",
+      "error": "Something went wrong. Try again or ping us on Telegram.",
+      "errors": {
+        "nameRequired": "Please share your name",
+        "emailRequired": "Please share your email",
+        "emailInvalid": "Looks like there's a typo in the email",
+        "messageRequired": "A couple of sentences about the project, please"
+      }
+    },
+    "channels": {
+      "title": "Other ways",
+      "items": {
+        "email": {
+          "title": "Email",
+          "value": "hi@aurora.digital",
+          "desc": "Usually replied within an hour"
+        },
+        "telegram": {
+          "title": "Telegram",
+          "value": "@aurora_digital",
+          "desc": "Best for quick questions"
+        },
+        "whatsapp": {
+          "title": "WhatsApp",
+          "value": "Message on WhatsApp",
+          "desc": "If you prefer"
+        }
+      }
+    }
+  },
+  "blog": {
+    "hub": {
+      "eyebrow": "Blog",
+      "title": "How we think about digital products",
+      "subtitle": "Cases, tech breakdowns and a take on digital — no fluff.",
+      "filterAll": "All topics",
+      "empty": "No posts in this topic yet."
+    },
+    "post": {
+      "back": "All posts",
+      "readingMinutes": "{minutes} min read",
+      "author": "Author",
+      "tags": "Topics",
+      "next": "Read next",
+      "share": "Share"
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About",
+      "title": "The team that",
+      "titleAccent": "ships to launch",
+      "subtitle": "We build websites, CRMs, bots and apps — but we measure ourselves by client revenue after release, not by lines of code."
+    },
+    "values": {
+      "eyebrow": "Principles",
+      "title": "How we work",
+      "items": {
+        "v1": {
+          "title": "Product > tasks",
+          "desc": "We push back if a solution is worse for the user. Sometimes awkward, always honest."
+        },
+        "v2": {
+          "title": "Ship, not «almost done»",
+          "desc": "We release in small iterations. «90% done» isn't a release."
+        },
+        "v3": {
+          "title": "Data, not «I think»",
+          "desc": "Metrics and experiments — not taste — especially after launch."
+        },
+        "v4": {
+          "title": "Support like a parent",
+          "desc": "We don't drop projects after shipping. We fix crashes and help them grow."
+        }
+      }
+    },
+    "team": {
+      "eyebrow": "Team",
+      "title": "Who makes it",
+      "members": {
+        "m1": {
+          "name": "Khaphol Afzal",
+          "role": "Founder · Product",
+          "bio": "8 years in digital, from frontend to launching the agency. Owns strategy and client relations."
+        },
+        "m2": {
+          "name": "Anna Kaplan",
+          "role": "Lead designer",
+          "bio": "Design systems, brand, UX flows. On principle: no Tilda templates."
+        },
+        "m3": {
+          "name": "Mikhail Voronin",
+          "role": "Tech Lead",
+          "bio": "Next.js, NestJS, infra and architecture. Code-reviews every release."
+        },
+        "m4": {
+          "name": "Olga Sokolova",
+          "role": "Project Manager",
+          "bio": "Missed deadlines are her personal grief. That's why we don't have them."
+        }
+      }
+    },
+    "stats": {
+      "title": "By the numbers",
+      "items": {
+        "projects": {
+          "value": "60+",
+          "label": "projects shipped"
+        },
+        "years": {
+          "value": "8 yrs",
+          "label": "team experience"
+        },
+        "retention": {
+          "value": "94%",
+          "label": "client return rate"
+        },
+        "team": {
+          "value": "12",
+          "label": "people on the team"
+        }
+      }
+    }
+  },
+  "cases": {
+    "hub": {
+      "eyebrow": "Cases",
+      "title": "Real projects, not marketing noise",
+      "subtitle": "Each case is a product we shipped and keep supporting.",
+      "filterAll": "All",
+      "empty": "No cases in this category yet."
+    },
+    "detail": {
+      "client": "Client",
+      "year": "Year",
+      "service": "Discipline",
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "outcome": "Outcome",
+      "stack": "Stack",
+      "metric": "Headline metric",
+      "back": "Back to cases",
+      "next": "Next case",
+      "ctaTitle": "A similar project?",
+      "ctaSubtitle": "We'll show you how to do the same in your business — in a 30-minute call."
+    }
+  },
+  "footer": {
+    "tagline": "We ship digital products that actually work.",
+    "navigation": "Navigation",
+    "services": "Services",
+    "contacts": "Contacts",
+    "rights": "© {year} AURORA. All rights reserved.",
+    "policy": "Privacy policy",
+    "terms": "Terms of use"
+  },
+  "faq": {
+    "eyebrow": "Knowledge base",
+    "title": "Answers to every question",
+    "subtitle": "Honest about pricing, timelines, code ownership and how it all works — based on an analysis of digital agencies in Russia and the West.",
+    "modelsTitle": "How we price",
+    "modelsSubtitle": "Three models — we pick the one that fits your project, not our convenience.",
+    "pricesTitle": "What it costs",
+    "pricesSubtitle": "2025–2026 market anchors. These are ranges, not promises — the real number comes after discovery.",
+    "pricesNote": "Ranges reflect the market. The final quote depends on scope and comes after a short call.",
+    "colType": "Project type",
+    "colTime": "Timeline",
+    "bestFor": "Best when",
+    "ctaTitle": "Still have a question?",
+    "ctaText": "Ask it directly — we answer honestly, no fluff.",
+    "colPrice": "Budget"
+  },
+  "widgets": {
+    "cookie": {
+      "text": "We use cookies and process personal data to make the site work and better. By staying, you agree to this.",
+      "accept": "I agree",
+      "privacy": "Policy"
+    },
+    "toTop": "Top",
+    "callback": {
+      "title": "Call me back",
+      "subtitle": "Leave your contacts — we'll call within a business day and answer your questions.",
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "submit": "Call me",
+      "success": "Thanks! We'll call you soon.",
+      "close": "Close"
+    }
+  },
+  "calculator": {
+    "eyebrow": "Calculator",
+    "title": "Estimate your project cost",
+    "subtitle": "Pick the solution type and the options you need — we'll show a ballpark. The exact estimate is fixed in the PRD.",
+    "step1": "1. What you need",
+    "step2": "2. Add-ons",
+    "resultLabel": "Approximately",
+    "upTo": "up to",
+    "note": "A preliminary estimate within our $350–6,000 band. The final price is set after the PRD and broken down by stage.",
+    "cta": "Discuss the project"
+  }
+}
