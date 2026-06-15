@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Sparkles, Mail, Send, MessageCircle } from "lucide-react";
+import { Sparkles, Mail, Send, MessageCircle, User } from "lucide-react";
 import { AuroraBackground } from "@/components/aurora-background";
 import { GradientText } from "@/components/gradient-text";
 import { GlowCard } from "@/components/glow-card";
@@ -37,6 +37,8 @@ export default async function ContactsPage({
 
   const tHero = await getTranslations("contacts.hero");
   const tCh = await getTranslations("contacts.channels");
+  const tTeam = await getTranslations("contacts.team");
+  const team = tTeam.raw("people") as { name: string; role?: string }[];
 
   const channels = [
     {
@@ -131,6 +133,29 @@ export default async function ContactsPage({
                 </a>
               );
             })}
+
+            <h2 className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              {tTeam("title")}
+            </h2>
+            {team.map((p) => (
+              <GlowCard key={p.name} className="flex items-center gap-4">
+                <span
+                  aria-hidden
+                  className="grid size-12 shrink-0 place-items-center rounded-xl text-[#0A0E27]"
+                  style={{ background: "linear-gradient(135deg,#01CDFE,#FF71CE)" }}
+                >
+                  <User className="size-5" strokeWidth={2.2} />
+                </span>
+                <div className="flex flex-col gap-1">
+                  <span className="font-display text-base font-semibold leading-tight">
+                    {p.name}
+                  </span>
+                  {p.role ? (
+                    <span className="text-sm text-muted-foreground">{p.role}</span>
+                  ) : null}
+                </div>
+              </GlowCard>
+            ))}
           </aside>
         </div>
       </section>

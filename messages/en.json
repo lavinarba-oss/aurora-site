@@ -434,6 +434,19 @@
           "desc": "If you prefer"
         }
       }
+    },
+    "team": {
+      "title": "Contact persons",
+      "people": [
+        {
+          "name": "Kirill Chernousov",
+          "role": ""
+        },
+        {
+          "name": "Ruslan Barashkin",
+          "role": ""
+        }
+      ]
     }
   },
   "blog": {
