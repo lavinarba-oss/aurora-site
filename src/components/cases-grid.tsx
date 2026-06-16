@@ -81,7 +81,7 @@ export function CasesGrid() {
                         </span>
                       </div>
                       <div className="flex flex-1 flex-col gap-2 p-5">
-                        <h3 className="font-display text-base font-semibold leading-tight">
+                        <h3 className="font-display text-base font-semibold leading-tight line-clamp-2">
                           {content.title}
                         </h3>
                         <p className="text-sm text-muted-foreground line-clamp-3">

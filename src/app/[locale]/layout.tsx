@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue, Oswald, Inter, JetBrains_Mono } from "next/font/google";
+import { Oswald, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
@@ -9,20 +9,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteWidgets } from "@/components/site-widgets";
 import "../globals.css";
 
-// Display face. Bebas Neue is Latin-only, so Cyrillic falls through to Oswald
-// (a close condensed match with full Cyrillic support) — see --font-display
-// in globals.css. Both read as tall, poster-style caps.
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  // Bebas has no Cyrillic. next/font otherwise injects an all-unicode
-  // "Bebas Neue Fallback" face that would shadow Oswald for Cyrillic glyphs,
-  // so disable it — Cyrillic then correctly falls through to Oswald.
-  adjustFontFallback: false,
-});
-
+// Single display face for BOTH Latin and Cyrillic, so EN and RU words sit at
+// the same size next to each other (Bebas was Latin-only and looked larger
+// beside Oswald Cyrillic). Oswald is a condensed, poster-style caps face with
+// full Cyrillic support.
 const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin", "latin-ext", "cyrillic"],
@@ -112,7 +102,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${bebas.variable} ${oswald.variable} ${inter.variable} ${jetbrains.variable} dark h-full antialiased`}
+      className={`${oswald.variable} ${inter.variable} ${jetbrains.variable} dark h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
