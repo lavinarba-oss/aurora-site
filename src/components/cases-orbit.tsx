@@ -119,6 +119,8 @@ export function CasesOrbit() {
     };
   };
 
+  const expandedItem = items.find((it) => it.n === expandedId) ?? null;
+
   return (
     <div
       ref={containerRef}
@@ -242,93 +244,87 @@ export function CasesOrbit() {
               >
                 {c.name[locale]}
               </span>
-
-              {/* Expanded card */}
-              {isExpanded && (
-                <div
-                  ref={cardRef}
-                  className="absolute left-1/2 top-24 z-50 w-[80vw] max-w-xs -translate-x-1/2 overflow-visible rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <div
-                    aria-hidden
-                    className="absolute -top-3 left-1/2 h-3 w-px -translate-x-1/2 bg-white/30"
-                  />
-
-                  <div className="flex items-center justify-between gap-3">
-                    <span
-                      className="rounded-full border border-white/[0.1] bg-white/[0.05] px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground"
-                    >
-                      {c.tag}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => toggle(c.n)}
-                      aria-label="Close"
-                      className="grid size-6 place-items-center rounded-md text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
-                    >
-                      <X className="size-3.5" />
-                    </button>
-                  </div>
-
-                  {c.image && (
-                    <div className="relative mt-3 aspect-[16/10] w-full overflow-hidden rounded-lg border border-white/[0.08] bg-[#070A1A]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={assetPath(c.image)}
-                        alt={content.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover object-top"
-                      />
-                    </div>
-                  )}
-
-                  <h3 className="mt-3 font-display text-base font-semibold leading-tight">
-                    {content.title}
-                  </h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    {content.client} · {c.year}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                    {content.summary}
-                  </p>
-
-                  {/* Metric pill */}
-                  <div className="mt-4 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                      {t("metric")}
-                    </span>
-                    <p className="mt-0.5 text-sm font-medium text-[var(--aurora-cyan)]">
-                      {content.metric}
-                    </p>
-                  </div>
-
-                  {/* Related cases */}
-                  <RelatedRow
-                    currentSlug={c.slug}
-                    service={c.service}
-                    locale={locale}
-                    onSelect={(n) => toggle(n)}
-                    items={items}
-                  />
-
-                  <Link
-                    href={`/cases/${c.slug}` as never}
-                    className={cn(
-                      buttonVariants({ size: "sm" }),
-                      "mt-4 w-full justify-center gap-2"
-                    )}
-                  >
-                    {tHub("filterAll") === "Все" ? "Открыть кейс" : "Open case"}
-                    <ArrowRight className="size-3.5" />
-                  </Link>
-                </div>
-              )}
             </div>
           );
         })}
       </div>
+
+      {/* Expanded case card — rendered once and pinned to the top-center of the
+          container, independent of node positions, so it can never be clipped.
+          The container grows (extraH) to fit it; the section below shifts down. */}
+      {expandedItem && (
+        <div
+          ref={cardRef}
+          className="absolute left-1/2 top-6 z-50 w-[80vw] max-w-xs -translate-x-1/2 rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex items-center justify-between gap-3">
+            <span className="rounded-full border border-white/[0.1] bg-white/[0.05] px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              {expandedItem.tag}
+            </span>
+            <button
+              type="button"
+              onClick={() => toggle(expandedItem.n)}
+              aria-label="Close"
+              className="grid size-6 place-items-center rounded-md text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+            >
+              <X className="size-3.5" />
+            </button>
+          </div>
+
+          {expandedItem.image && (
+            <div className="relative mt-3 aspect-[16/10] w-full overflow-hidden rounded-lg border border-white/[0.08] bg-[#070A1A]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={assetPath(expandedItem.image)}
+                alt={expandedItem.i18n[locale].title}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          )}
+
+          <h3 className="mt-3 font-display text-base font-semibold leading-tight">
+            {expandedItem.i18n[locale].title}
+          </h3>
+          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            {expandedItem.i18n[locale].client} · {expandedItem.year}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+            {expandedItem.i18n[locale].summary}
+          </p>
+
+          {/* Metric pill */}
+          <div className="mt-4 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              {t("metric")}
+            </span>
+            <p className="mt-0.5 text-sm font-medium text-[var(--aurora-cyan)]">
+              {expandedItem.i18n[locale].metric}
+            </p>
+          </div>
+
+          <RelatedRow
+            currentSlug={expandedItem.slug}
+            service={expandedItem.service}
+            locale={locale}
+            onSelect={(n) => toggle(n)}
+            items={items}
+          />
+
+          <Link
+            href={`/cases/${expandedItem.slug}` as never}
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "mt-4 w-full justify-center gap-2"
+            )}
+          >
+            {tHub("filterAll") === "Все" ? "Открыть кейс" : "Open case"}
+            <ArrowRight className="size-3.5" />
+          </Link>
+        </div>
+      )}
 
       {/* Bottom hint — hidden while a case card is open so it never overlaps it */}
       {expandedId === null && (
