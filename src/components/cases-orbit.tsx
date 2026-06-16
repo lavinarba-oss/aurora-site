@@ -58,19 +58,25 @@ export function CasesOrbit() {
       setExtraH(0);
       return;
     }
-    // On expand the clicked node always rotates to the top of the orbit, so the
-    // card's top is deterministic. Its own height (offsetHeight) is stable and
-    // unaffected by the in-flight rotation animation — so we avoid measuring a
-    // moving target.
-    const id = requestAnimationFrame(() => {
+    // Measure the card's actual bottom relative to the container top (stable —
+    // the card is absolutely anchored to its node, so growing the container
+    // downward never moves it). Re-measure after the node-centering animation
+    // settles so we account for the final position.
+    const measure = () => {
       const card = cardRef.current;
-      if (!card) return;
-      const cardTop = containerH / 2 - radius - nodeSize / 2 + 96; // top-24
-      const need = cardTop + card.offsetHeight + 40; // breathing room
-      setExtraH(Math.max(0, Math.round(need - containerH)));
-    });
-    return () => cancelAnimationFrame(id);
-  }, [expandedId, containerH, radius, nodeSize, vw]);
+      const cont = containerRef.current;
+      if (!card || !cont) return;
+      const bottomFromTop =
+        card.getBoundingClientRect().bottom - cont.getBoundingClientRect().top;
+      setExtraH(Math.max(0, Math.round(bottomFromTop + 32 - containerH)));
+    };
+    const t1 = setTimeout(measure, 60);
+    const t2 = setTimeout(measure, 780);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [expandedId, containerH, vw]);
 
   // Auto rotation
   useEffect(() => {
