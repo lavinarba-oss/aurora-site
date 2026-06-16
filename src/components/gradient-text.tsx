@@ -8,12 +8,15 @@ type GradientTextProps = {
   variant?: "aurora" | "purple-cyan" | "pink-purple";
 };
 
+// Use the explicit `image:` hint so Tailwind emits `background-image` (a bare
+// `bg-[var(--x)]` is treated as background-COLOR, which silently drops a
+// gradient value and leaves the clipped text invisible).
 const variantMap: Record<NonNullable<GradientTextProps["variant"]>, string> = {
-  aurora: "bg-[var(--aurora-gradient)]",
+  aurora: "bg-[image:var(--aurora-gradient)]",
   "purple-cyan":
-    "bg-[linear-gradient(120deg,var(--aurora-purple),var(--aurora-cyan))]",
+    "bg-[image:linear-gradient(120deg,var(--aurora-purple),var(--aurora-cyan))]",
   "pink-purple":
-    "bg-[linear-gradient(120deg,var(--aurora-pink),var(--aurora-purple))]",
+    "bg-[image:linear-gradient(120deg,var(--aurora-pink),var(--aurora-purple))]",
 };
 
 /** Inline gradient-text span. Use for accent phrases inside headings. */
