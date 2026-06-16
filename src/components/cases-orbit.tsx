@@ -126,11 +126,13 @@ export function CasesOrbit() {
       style={{ height: containerH + extraH }}
       className="relative w-full overflow-hidden select-none transition-[height] duration-300 ease-out"
     >
-      {/* Hub */}
+      {/* Hub — pinned to the base-height top region so that growing the
+          container (to fit an expanded card) adds empty space BELOW the orbit
+          instead of pushing the orbit's center (and the card) down. */}
       <div
         ref={orbitRef}
-        className="absolute inset-0 flex items-center justify-center"
-        style={{ perspective: "1200px" }}
+        className="absolute inset-x-0 top-0 flex items-center justify-center"
+        style={{ perspective: "1200px", height: containerH }}
       >
         {/* Central pulse */}
         <div className="pointer-events-none absolute z-10 grid size-20 place-items-center">
