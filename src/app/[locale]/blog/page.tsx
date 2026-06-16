@@ -42,7 +42,7 @@ export default async function BlogHubPage({
 
   if (posts.length === 0) {
     return (
-      <main className="mx-auto max-w-7xl px-6 py-32 text-center">
+      <main className="mx-auto max-w-7xl px-6 py-20 text-center">
         <h1 className="font-display text-4xl font-semibold">{t("title")}</h1>
         <p className="mt-4 text-muted-foreground">{t("empty")}</p>
       </main>

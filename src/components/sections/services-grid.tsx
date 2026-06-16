@@ -17,7 +17,7 @@ export async function ServicesGrid() {
   const tHome = await getTranslations("home.services");
 
   return (
-    <section className="relative py-24 sm:py-32" id="services">
+    <section className="relative py-14 sm:py-24" id="services">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <SectionHeader

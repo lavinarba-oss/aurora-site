@@ -19,7 +19,7 @@ export async function ProcessSection() {
   };
 
   return (
-    <section className="relative py-24 sm:py-32" id="process">
+    <section className="relative py-14 sm:py-24" id="process">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />

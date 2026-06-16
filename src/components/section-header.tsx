@@ -29,7 +29,7 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+        <span className="font-display inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-1.5 text-base uppercase tracking-[0.18em] text-muted-foreground sm:text-lg">
           <span
             aria-hidden
             className="size-1.5 rounded-full bg-[var(--aurora-cyan)] shadow-[0_0_12px_var(--aurora-cyan)]"

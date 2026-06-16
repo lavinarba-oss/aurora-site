@@ -153,7 +153,7 @@ export default async function CaseDetailPage({
       </section>
 
       {/* Narrative */}
-      <section className="relative py-24 sm:py-32">
+      <section className="relative py-14 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <div className="grid gap-12">
             <NarrativeBlock title={t("challenge")} text={content.challenge} />

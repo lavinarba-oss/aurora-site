@@ -134,11 +134,26 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  /* Single type system across the whole site — Bebas (latin) / Oswald
+     (cyrillic), all uppercase, per request. */
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 1.35;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "cv11", "ss01", "ss03";
+}
+
+/* Keep what the user types readable & natural — never force-uppercase or
+   restyle the text inside form controls. */
+input,
+textarea,
+select,
+[contenteditable] {
+  font-family: var(--font-sans);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 ::selection {

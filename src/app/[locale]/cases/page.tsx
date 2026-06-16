@@ -41,16 +41,16 @@ export default async function CasesHubPage({
       {/* Hero */}
       <section className="relative overflow-hidden">
         <AuroraBackground />
-        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 pt-28 pb-8 text-center sm:pt-36 sm:pb-12">
-          <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 pt-20 pb-6 text-center sm:pt-28 sm:pb-10">
+          <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-display text-base uppercase tracking-[0.14em] text-muted-foreground sm:text-lg">
             <Sparkles
-              className="size-3.5 text-[var(--aurora-cyan)]"
+              className="size-4 text-[var(--aurora-cyan)]"
               aria-hidden
             />
             {t("eyebrow")}
           </span>
 
-          <h1 className="mt-8 font-display text-4xl font-semibold leading-[1.04] tracking-tight text-balance sm:text-6xl md:text-7xl">
+          <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.04] tracking-tight text-balance sm:text-6xl md:text-7xl">
             <GradientText>{t("title")}</GradientText>
           </h1>
 
@@ -68,7 +68,7 @@ export default async function CasesHubPage({
       </section>
 
       {/* Full list below the orbit */}
-      <section className="relative pt-8 pb-24">
+      <section className="relative pt-4 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 flex items-center gap-3">
             <span

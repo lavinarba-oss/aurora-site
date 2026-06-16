@@ -42,11 +42,11 @@ export function CasesOrbit() {
   }, []);
   const compact = vw < 640;
   const mid = vw >= 640 && vw < 1024;
-  const radius = compact ? 128 : mid ? 188 : 240;
+  const radius = compact ? 108 : mid ? 188 : 240;
   const ringOuter = radius * 2;
-  const ringInner = compact ? 188 : mid ? 252 : 300;
-  const containerH = compact ? 560 : mid ? 680 : 760;
-  const nodeSize = compact ? 44 : 48;
+  const ringInner = compact ? 150 : mid ? 252 : 300;
+  const containerH = compact ? 500 : mid ? 680 : 760;
+  const nodeSize = compact ? 40 : 48;
 
   // Auto rotation
   useEffect(() => {
@@ -201,7 +201,8 @@ export function CasesOrbit() {
               {/* Label */}
               <span
                 className={cn(
-                  "absolute left-1/2 top-14 -translate-x-1/2 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-all duration-300",
+                  "absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-medium uppercase tracking-[0.16em] transition-all duration-300",
+                  compact ? "top-11 text-[9px]" : "top-14 text-[11px]",
                   isExpanded
                     ? "text-foreground scale-110"
                     : "text-muted-foreground"

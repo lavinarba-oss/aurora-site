@@ -21,10 +21,10 @@ export async function HeroSection() {
     <section className="relative overflow-hidden">
       <AuroraBackground />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 pt-24 pb-20 sm:px-6 sm:pt-32 sm:pb-28 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-8 md:pt-36 md:pb-32 lg:gap-12">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-8 md:pt-28 md:pb-24 lg:gap-12">
         {/* Copy */}
         <div className="text-center md:text-left">
-          <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
+          <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-display text-base uppercase tracking-[0.14em] text-muted-foreground sm:text-lg">
             <Sparkles
               className="size-3.5 text-[var(--aurora-cyan)]"
               aria-hidden

@@ -29,7 +29,7 @@ export async function RelatedCases({ service, limit = 3 }: RelatedCasesProps) {
   }
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-14 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <SectionHeader

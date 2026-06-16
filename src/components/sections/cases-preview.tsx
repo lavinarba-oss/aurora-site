@@ -11,7 +11,7 @@ export async function CasesPreview() {
   const t = await getTranslations("home.cases");
 
   return (
-    <section className="relative py-24 sm:py-32" id="cases">
+    <section className="relative py-14 sm:py-24" id="cases">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <SectionHeader

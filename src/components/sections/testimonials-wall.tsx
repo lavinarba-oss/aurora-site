@@ -20,7 +20,7 @@ export async function TestimonialsWall() {
   const row2 = TESTIMONIALS.slice(mid);
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-14 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
