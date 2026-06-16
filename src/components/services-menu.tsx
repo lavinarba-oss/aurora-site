@@ -26,7 +26,7 @@ export function ServicesMenu({ className }: ServicesMenuProps) {
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          "inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors outline-none",
+          "font-display uppercase tracking-[0.08em] text-[0.95rem] inline-flex items-center gap-1 text-muted-foreground transition-colors outline-none",
           "hover:text-foreground focus-visible:text-foreground",
           "data-[state=open]:text-foreground",
           className

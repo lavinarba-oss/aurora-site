@@ -6,6 +6,54 @@ import { getSolution } from "@/lib/solutions";
 import type { Locale } from "@/i18n/routing";
 import { BrandMark } from "./brand-mark";
 
+/**
+ * SEO keyword cloud — mid-frequency commercial queries for the niche,
+ * derived from the service line-up. Each links to the most relevant service
+ * page so the internal linking reinforces those landing pages.
+ */
+const KEYWORDS: Record<Locale, { label: string; href: string }[]> = {
+  ru: [
+    { label: "Разработка лендинга под ключ", href: "/services/landing" },
+    { label: "Заказать landing page", href: "/services/landing" },
+    { label: "Создание корпоративного сайта", href: "/services/multipage" },
+    { label: "Разработка сайта под ключ", href: "/services/multipage" },
+    { label: "Сайт-каталог для бизнеса", href: "/services/catalog" },
+    { label: "Создание интернет-магазина", href: "/services/ecommerce" },
+    { label: "Разработка интернет-магазина", href: "/services/ecommerce" },
+    { label: "Разработка веб-приложения", href: "/services/webapp" },
+    { label: "Веб-сервис на заказ", href: "/services/webapp" },
+    { label: "Разработка Telegram-бота", href: "/services/integrations" },
+    { label: "Интеграция CRM и 1С", href: "/services/integrations" },
+    { label: "Внедрение и настройка CRM", href: "/services/automation" },
+    { label: "Автоматизация бизнес-процессов", href: "/services/automation" },
+    { label: "UX/UI дизайн сайта", href: "/services/design" },
+    { label: "Разработка фирменного стиля", href: "/services/design" },
+    { label: "SEO-продвижение сайта", href: "/services/marketing" },
+    { label: "Настройка контекстной рекламы", href: "/services/marketing" },
+    { label: "Поддержка и сопровождение сайта", href: "/services/support" },
+  ],
+  en: [
+    { label: "Landing page development", href: "/services/landing" },
+    { label: "Order a landing page", href: "/services/landing" },
+    { label: "Corporate website development", href: "/services/multipage" },
+    { label: "Custom website build", href: "/services/multipage" },
+    { label: "Product catalogue website", href: "/services/catalog" },
+    { label: "Online store development", href: "/services/ecommerce" },
+    { label: "E-commerce website build", href: "/services/ecommerce" },
+    { label: "Web app development", href: "/services/webapp" },
+    { label: "Custom web service", href: "/services/webapp" },
+    { label: "Telegram bot development", href: "/services/integrations" },
+    { label: "CRM & ERP integration", href: "/services/integrations" },
+    { label: "CRM setup & rollout", href: "/services/automation" },
+    { label: "Business process automation", href: "/services/automation" },
+    { label: "UX/UI website design", href: "/services/design" },
+    { label: "Brand identity design", href: "/services/design" },
+    { label: "SEO & website promotion", href: "/services/marketing" },
+    { label: "Paid ads setup", href: "/services/marketing" },
+    { label: "Website support & maintenance", href: "/services/support" },
+  ],
+};
+
 /** Site-wide footer with brand block, nav, services and legal */
 export async function SiteFooter() {
   const tFooter = await getTranslations("footer");
@@ -63,6 +111,27 @@ export async function SiteFooter() {
               </FooterExternal>
             ))}
         </FooterColumn>
+      </div>
+
+      {/* SEO keyword cloud */}
+      <div className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <span className="font-display text-sm uppercase tracking-[0.2em] text-muted-foreground/80">
+            {locale === "ru" ? "Популярные запросы" : "Popular searches"}
+          </span>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {KEYWORDS[locale].map((k) => (
+              <li key={k.label}>
+                <Link
+                  href={k.href}
+                  className="inline-flex rounded-full border border-white/[0.07] bg-white/[0.02] px-3 py-1.5 text-xs uppercase tracking-[0.04em] text-muted-foreground/80 transition-colors hover:border-white/[0.16] hover:text-foreground"
+                >
+                  {k.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="border-t border-white/[0.06]">

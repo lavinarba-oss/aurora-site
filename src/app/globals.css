@@ -177,8 +177,10 @@ h6,
   text-transform: uppercase;
   letter-spacing: 0.03em;
   font-weight: 600;
-  /* Bebas/Oswald caps sit tighter vertically — give them a touch of air */
-  line-height: 1.08;
+  /* Tall condensed caps need room — too tight clips glyph tops and makes
+     multi-line headings collide. */
+  line-height: 1.18;
+  padding-top: 0.02em;
 }
 
 /* Reusable Aurora background layer (decorative) */

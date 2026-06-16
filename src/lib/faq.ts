@@ -93,38 +93,38 @@ export type PriceRange = {
 export const PRICE_RANGES: PriceRange[] = [
   {
     id: "landing",
-    ru: { type: "Landing page", range: "от 30 000 ₽", time: "2–4 недели" },
-    en: { type: "Landing page", range: "from $350", time: "2–4 weeks" },
+    ru: { type: "Landing page", range: "от 18 000 ₽", time: "2–4 недели" },
+    en: { type: "Landing page", range: "from $200", time: "2–4 weeks" },
   },
   {
     id: "automation",
-    ru: { type: "Автоматизации", range: "от 30 000 ₽", time: "от 1 недели" },
-    en: { type: "Automations", range: "from $350", time: "from 1 week" },
+    ru: { type: "Автоматизации", range: "от 90 000 ₽", time: "от 1 недели" },
+    en: { type: "Automations", range: "from $1,050", time: "from 1 week" },
   },
   {
     id: "integrations",
-    ru: { type: "Интеграции", range: "от 40 000 ₽", time: "1–4 недели" },
-    en: { type: "Integrations", range: "from $470", time: "1–4 weeks" },
+    ru: { type: "Интеграции", range: "от 38 000 ₽", time: "1–4 недели" },
+    en: { type: "Integrations", range: "from $450", time: "1–4 weeks" },
   },
   {
     id: "catalog",
-    ru: { type: "Интернет-каталог", range: "от 60 000 ₽", time: "2–6 недель" },
-    en: { type: "Online catalogue", range: "from $700", time: "2–6 weeks" },
+    ru: { type: "Интернет-каталог", range: "от 55 000 ₽", time: "2–6 недель" },
+    en: { type: "Online catalogue", range: "from $650", time: "2–6 weeks" },
   },
   {
     id: "multipage",
-    ru: { type: "Многостраничный сайт", range: "от 80 000 ₽", time: "4–10 недель" },
-    en: { type: "Multi-page website", range: "from $950", time: "4–10 weeks" },
+    ru: { type: "Многостраничный сайт", range: "от 85 000 ₽", time: "4–10 недель" },
+    en: { type: "Multi-page website", range: "from $1,000", time: "4–10 weeks" },
   },
   {
     id: "ecommerce",
-    ru: { type: "Интернет-магазин", range: "от 150 000 ₽", time: "2–4 месяца" },
-    en: { type: "Online store", range: "from $1,800", time: "2–4 months" },
+    ru: { type: "Интернет-магазин", range: "от 240 000 ₽", time: "2–4 месяца" },
+    en: { type: "Online store", range: "from $2,800", time: "2–4 months" },
   },
   {
     id: "webapp",
-    ru: { type: "Веб-приложение", range: "от 200 000 ₽", time: "от 3 месяцев" },
-    en: { type: "Web application", range: "from $2,400", time: "from 3 months" },
+    ru: { type: "Веб-приложение", range: "от 250 000 ₽", time: "от 3 месяцев" },
+    en: { type: "Web application", range: "from $2,950", time: "from 3 months" },
   },
 ];
 
@@ -145,11 +145,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: "how-much",
         ru: {
           q: "Сколько стоит сайт / магазин / веб-приложение?",
-          a: "Наша вилка — от 30 000 до 500 000 ₽ в зависимости от сложности проекта. Ориентиры: лендинг — от 30 000 ₽, автоматизации — от 30 000 ₽, интеграции — от 40 000 ₽, интернет-каталог — от 60 000 ₽, многостраничный сайт — от 80 000 ₽, интернет-магазин — от 150 000 ₽, веб-приложение — от 200 000 ₽. Точную смету формируем после составления PRD и согласовываем цену за каждый этап до старта разработки.",
+          a: "Наша вилка — от 18 000 до 500 000 ₽ в зависимости от сложности проекта. Ориентиры: лендинг — от 18 000 ₽, интеграции 1С/Битрикс — от 38 000 ₽, интернет-каталог — от 55 000 ₽, многостраничный сайт — от 85 000 ₽, AI-агенты и автоматизация — от 90 000 ₽, интернет-магазин — от 240 000 ₽, веб-приложение — от 250 000 ₽. Точную смету формируем после составления PRD и согласовываем цену за каждый этап до старта разработки.",
         },
         en: {
           q: "How much does a site / store / web app cost?",
-          a: "Our band is from $350 to $6,000 depending on complexity. Anchors: a landing page from $350, automations from $350, integrations from $470, an online catalogue from $700, a multi-page site from $950, an online store from $1,800, a web app from $2,400. The exact estimate is set after we write the PRD, with a price agreed for each stage before development starts.",
+          a: "Our band is from $200 to $6,000 depending on complexity. Anchors: a landing page from $200, 1C/Bitrix integration from $450, an online catalogue from $650, a multi-page site from $1,000, AI agents & automation from $1,050, an online store from $2,800, a web app from $2,950. The exact estimate is set after we write the PRD, with a price agreed for each stage before development starts.",
         },
       },
       {

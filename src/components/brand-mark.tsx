@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, assetPath } from "@/lib/utils";
 
 type BrandMarkProps = {
   className?: string;
@@ -6,32 +6,30 @@ type BrandMarkProps = {
 };
 
 const sizeMap = {
-  sm: { text: "text-base", dot: "size-1.5" },
-  md: { text: "text-lg", dot: "size-2" },
-  lg: { text: "text-xl", dot: "size-2.5" },
+  sm: { text: "text-base", mark: "h-6" },
+  md: { text: "text-lg", mark: "h-7" },
+  lg: { text: "text-2xl", mark: "h-10" },
 };
 
-/** AURORA wordmark with animated aurora dot — used in header and footer */
+/** AURORA logo — aurora-planet emblem + wordmark. Used in header and footer. */
 export function BrandMark({ className, size = "md" }: BrandMarkProps) {
   const s = sizeMap[size];
 
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 font-display font-semibold tracking-tight",
+        "inline-flex items-center gap-2.5 font-display font-semibold tracking-tight",
         s.text,
         className
       )}
     >
-      <span
-        aria-hidden
-        className={cn(
-          "relative inline-block rounded-full bg-[var(--aurora-gradient)] shadow-[0_0_18px_color-mix(in_oklab,var(--aurora-purple)_70%,transparent)]",
-          s.dot
-        )}
-      >
-        <span className="absolute inset-0 animate-ping rounded-full bg-[var(--aurora-purple)] opacity-30" />
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={assetPath("/brand/aurorra-emblem.png")}
+        alt="AURORA"
+        className={cn("w-auto select-none", s.mark)}
+        draggable={false}
+      />
       AURORA
     </span>
   );
