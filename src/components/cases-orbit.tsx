@@ -54,7 +54,11 @@ export function CasesOrbit() {
   const cardRef = useRef<HTMLDivElement>(null);
   const [extraH, setExtraH] = useState(0);
   useEffect(() => {
-    if (expandedId === null) {
+    // On desktop (lg+) the card opens to the RIGHT of the orbit, vertically
+    // centred and capped to the orbit height (scrolls internally if needed), so
+    // the container never needs to grow. Below lg the card sits top-centre and
+    // the container grows to fit it.
+    if (expandedId === null || vw >= 1024) {
       setExtraH(0);
       return;
     }
@@ -255,7 +259,7 @@ export function CasesOrbit() {
       {expandedItem && (
         <div
           ref={cardRef}
-          className="absolute left-1/2 top-6 z-50 w-[80vw] max-w-xs -translate-x-1/2 rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none"
+          className="absolute left-1/2 top-6 z-50 w-[80vw] max-w-xs -translate-x-1/2 rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none lg:left-auto lg:right-0 lg:top-1/2 lg:max-h-[calc(100%-2rem)] lg:translate-x-0 lg:-translate-y-1/2 lg:overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between gap-3">
