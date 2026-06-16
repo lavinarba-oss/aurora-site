@@ -1,0 +1,36 @@
+name: Build root bundle (Beget / any classic host)
+
+# Produces a static `out/` built for a ROOT domain (no /aurora-site prefix),
+# zipped as a downloadable artifact you can upload to Beget's public_html.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/root-build.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # No NEXT_PUBLIC_BASE_PATH -> assets/links resolve from the domain root.
+      - run: pnpm run build:static
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aurorra-beget
+          path: out
+          retention-days: 7
