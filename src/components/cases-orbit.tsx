@@ -31,6 +31,23 @@ export function CasesOrbit() {
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
 
+  // Responsive sizing — the orbit math is pixel-based, so scale the radius and
+  // rings to the viewport instead of clipping a fixed 480px circle on phones.
+  const [vw, setVw] = useState(1280);
+  useEffect(() => {
+    const onResize = () => setVw(window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  const compact = vw < 640;
+  const mid = vw >= 640 && vw < 1024;
+  const radius = compact ? 128 : mid ? 188 : 240;
+  const ringOuter = radius * 2;
+  const ringInner = compact ? 188 : mid ? 252 : 300;
+  const containerH = compact ? 560 : mid ? 680 : 760;
+  const nodeSize = compact ? 44 : 48;
+
   // Auto rotation
   useEffect(() => {
     if (!autoRotate) return;
@@ -76,7 +93,8 @@ export function CasesOrbit() {
     <div
       ref={containerRef}
       onClick={closeAll}
-      className="relative h-[760px] w-full overflow-hidden select-none"
+      style={{ height: containerH }}
+      className="relative w-full overflow-hidden select-none"
     >
       {/* Hub */}
       <div
@@ -103,15 +121,24 @@ export function CasesOrbit() {
         </div>
 
         {/* Orbit ring */}
-        <div className="pointer-events-none absolute size-[480px] rounded-full border border-white/[0.06]" />
-        <div className="pointer-events-none absolute size-[480px] rounded-full border border-[var(--aurora-cyan)]/[0.08]" />
+        <div
+          style={{ width: ringOuter, height: ringOuter }}
+          className="pointer-events-none absolute rounded-full border border-white/[0.06]"
+        />
+        <div
+          style={{ width: ringOuter, height: ringOuter }}
+          className="pointer-events-none absolute rounded-full border border-[var(--aurora-cyan)]/[0.08]"
+        />
 
         {/* Inner orbit ring */}
-        <div className="pointer-events-none absolute size-[300px] rounded-full border border-white/[0.04]" />
+        <div
+          style={{ width: ringInner, height: ringInner }}
+          className="pointer-events-none absolute rounded-full border border-white/[0.04]"
+        />
 
         {/* Nodes */}
         {items.map((c, idx) => {
-          const pos = calcPos(idx, items.length, 240);
+          const pos = calcPos(idx, items.length, radius);
           const isExpanded = expandedId === c.n;
           const service = SERVICES.find((s) => s.slug === c.service);
           const Icon = service?.icon;
@@ -144,12 +171,14 @@ export function CasesOrbit() {
                 type="button"
                 aria-label={content.title}
                 className={cn(
-                  "relative grid size-12 cursor-pointer place-items-center rounded-full border transition-all duration-300",
+                  "relative grid cursor-pointer place-items-center rounded-full border transition-all duration-300",
                   isExpanded
                     ? "scale-125 border-white/40 shadow-[0_0_40px_var(--aurora-purple)]"
                     : "border-white/20 hover:border-white/40 hover:scale-110"
                 )}
                 style={{
+                  width: nodeSize,
+                  height: nodeSize,
                   background: isExpanded
                     ? "var(--background)"
                     : "color-mix(in oklab, var(--background) 70%, transparent)",
@@ -184,7 +213,7 @@ export function CasesOrbit() {
               {/* Expanded card */}
               {isExpanded && (
                 <div
-                  className="absolute left-1/2 top-24 z-50 w-80 -translate-x-1/2 overflow-visible rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-24 z-50 w-[80vw] max-w-xs -translate-x-1/2 overflow-visible rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div

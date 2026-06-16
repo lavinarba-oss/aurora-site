@@ -93,7 +93,7 @@ function FooterColumn({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground/80">
+      <span className="font-display text-sm uppercase tracking-[0.2em] text-muted-foreground/80">
         {title}
       </span>
       <ul className="flex flex-col gap-2 text-sm">{children}</ul>
@@ -112,7 +112,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-muted-foreground transition-colors hover:text-foreground"
+        className="font-display uppercase tracking-[0.05em] text-muted-foreground transition-colors hover:text-foreground"
       >
         {children}
       </Link>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter, JetBrains_Mono } from "next/font/google";
+import { Bebas_Neue, Oswald, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
@@ -9,11 +9,21 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteWidgets } from "@/components/site-widgets";
 import "../globals.css";
 
-const display = Manrope({
-  variable: "--font-display",
+// Display face. Bebas Neue is Latin-only, so Cyrillic falls through to Oswald
+// (a close condensed match with full Cyrillic support) — see --font-display
+// in globals.css. Both read as tall, poster-style caps.
+const bebas = Bebas_Neue({
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
@@ -98,7 +108,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${display.variable} ${inter.variable} ${jetbrains.variable} dark h-full antialiased`}
+      className={`${bebas.variable} ${oswald.variable} ${inter.variable} ${jetbrains.variable} dark h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">

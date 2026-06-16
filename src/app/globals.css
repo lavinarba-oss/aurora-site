@@ -110,7 +110,7 @@
   --radius-xl: var(--radius-xl);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display), var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-bebas), var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --ease-aurora: cubic-bezier(0.16, 1, 0.3, 1);
@@ -141,6 +141,26 @@ body {
 ::selection {
   background: color-mix(in oklab, var(--aurora-purple) 40%, transparent);
   color: var(--foreground);
+}
+
+/* ------------------------------------------------------------------ */
+/* Display type — Bebas Neue (latin) / Oswald (cyrillic), all-caps    */
+/* Headings and anything using .font-display render as poster caps.   */
+/* Long-form body copy stays in the readable sans (var(--font-sans)). */
+/* ------------------------------------------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  /* Bebas/Oswald caps sit tighter vertically — give them a touch of air */
+  line-height: 1.08;
 }
 
 /* Reusable Aurora background layer (decorative) */

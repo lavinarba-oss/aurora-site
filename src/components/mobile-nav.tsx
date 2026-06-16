@@ -53,7 +53,7 @@ export function MobileNav() {
           <SheetTitle className="sr-only">Navigation</SheetTitle>
 
           <nav className="flex-1 overflow-y-auto px-5 py-6">
-            <ul className="flex flex-col gap-1 text-base font-medium">
+            <ul className="flex flex-col gap-1 font-display text-xl uppercase tracking-[0.06em]">
               {NAV.map((item) => (
                 <li key={item.key}>
                   <Link

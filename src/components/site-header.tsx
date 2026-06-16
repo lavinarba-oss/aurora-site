@@ -46,7 +46,7 @@ export function SiteHeader() {
                 key={item.key}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "font-display uppercase tracking-[0.08em] text-[0.95rem] transition-colors",
                   pathname === item.href
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -64,7 +64,7 @@ export function SiteHeader() {
                     key={item.key}
                     href={item.href}
                     className={cn(
-                      "text-sm font-medium transition-colors",
+                      "font-display uppercase tracking-[0.08em] text-[0.95rem] transition-colors",
                       active
                         ? "text-foreground"
                         : "text-muted-foreground hover:text-foreground"

@@ -16,8 +16,6 @@ import { cn } from "@/lib/utils";
 export async function HeroSection() {
   const t = await getTranslations("home.hero");
   const tCta = await getTranslations("common.cta");
-  const tRobot = await getTranslations("home.robot");
-  const robotMessages = tRobot.raw("messages") as string[];
 
   return (
     <section className="relative overflow-hidden">
@@ -65,7 +63,7 @@ export async function HeroSection() {
 
         {/* 3D robot — hidden on mobile to save bandwidth */}
         <div className="relative hidden h-[420px] w-full md:block md:h-[520px] lg:h-[600px]">
-          <SplineRobot messages={robotMessages} hint={tRobot("hint")} />
+          <SplineRobot />
         </div>
       </div>
 
