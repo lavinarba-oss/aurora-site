@@ -17,6 +17,10 @@ const bebas = Bebas_Neue({
   subsets: ["latin"],
   display: "swap",
   weight: ["400"],
+  // Bebas has no Cyrillic. next/font otherwise injects an all-unicode
+  // "Bebas Neue Fallback" face that would shadow Oswald for Cyrillic glyphs,
+  // so disable it — Cyrillic then correctly falls through to Oswald.
+  adjustFontFallback: false,
 });
 
 const oswald = Oswald({
