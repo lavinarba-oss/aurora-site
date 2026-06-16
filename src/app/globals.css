@@ -110,7 +110,10 @@
   --radius-xl: var(--radius-xl);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-bebas), var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  /* Reference the real faces by name and put Oswald BEFORE any next/font
+     "*-Fallback" family — otherwise the all-unicode Bebas fallback would
+     shadow Oswald and Cyrillic headings would drop to a system font. */
+  --font-display: "Bebas Neue", "Oswald", var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --ease-aurora: cubic-bezier(0.16, 1, 0.3, 1);
