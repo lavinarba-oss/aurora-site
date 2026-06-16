@@ -63,7 +63,7 @@ function readPost(locale: Locale, slug: string): BlogPost | null {
     description: fm.description ?? "",
     date: fm.date ?? "2026-01-01",
     tags: fm.tags ?? [],
-    author: fm.author ?? "AURORA",
+    author: fm.author ?? "AURORRA",
     cover: fm.cover ?? "linear-gradient(135deg,#B967FF,#01CDFE)",
     content,
     readingMinutes: Math.max(1, Math.round(stats.minutes)),

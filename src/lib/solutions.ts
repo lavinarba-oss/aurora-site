@@ -1,11 +1,11 @@
 /**
- * The real AURORA service catalogue, as data.
+ * The real AURORRA service catalogue, as data.
  *
  * Seven web-solution types we build for B2B clients across every niche.
  * Each entry carries long-form, locale-specific copy (the detail-page article
  * is ≥1000 characters), who it suits, what's included and a price range.
  *
- * Pricing reflects AURORA's actual band: from 30 000 ₽ to 500 000 ₽ depending
+ * Pricing reflects AURORRA's actual band: from 30 000 ₽ to 500 000 ₽ depending
  * on complexity. Every project starts with a jointly-written PRD and a
  * stage-by-stage estimate agreed before development begins (see PROCESS_STEPS).
  *
@@ -43,7 +43,7 @@ export type SolutionLocale = {
 
 export type SolutionDef = {
   slug: SolutionSlug;
-  /** Price band in rubles (within AURORA's 30 000–500 000 ₽ range) */
+  /** Price band in rubles (within AURORRA's 30 000–500 000 ₽ range) */
   price: { from: number; to: number };
   ru: SolutionLocale;
   en: SolutionLocale;

@@ -68,7 +68,7 @@ export default async function CasesHubPage({
       </section>
 
       {/* Full list below the orbit */}
-      <section className="relative pt-4 pb-16 sm:pb-24">
+      <section className="relative pt-12 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 flex items-center gap-3">
             <span

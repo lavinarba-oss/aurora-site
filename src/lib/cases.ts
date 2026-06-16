@@ -404,7 +404,7 @@ export const CASES: CaseDef[] = [
     i18n: {
       ru: {
         title: "СВОЯ — мультитенантная CMS для агентства",
-        client: "AURORA (внутренний продукт)",
+        client: "AURORRA (внутренний продукт)",
         summary:
           "Платформа, на которой команда поддерживает 30+ клиентских сайтов с единой админкой, ролями и аналитикой.",
         metric: "API :3000 · admin :3001 · public-site :3002",
@@ -417,7 +417,7 @@ export const CASES: CaseDef[] = [
       },
       en: {
         title: "SVOYYA — a multi-tenant CMS for the agency",
-        client: "AURORA (internal product)",
+        client: "AURORRA (internal product)",
         summary:
           "A platform powering 30+ client sites with a single admin, roles and analytics.",
         metric: "API :3000 · admin :3001 · public-site :3002",

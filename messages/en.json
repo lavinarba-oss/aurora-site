@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "AURORA",
+    "brand": "AURORRA",
     "tagline": "Full-cycle digital agency",
     "cta": {
       "discuss": "Discuss a project",
@@ -571,7 +571,7 @@
     "navigation": "Navigation",
     "services": "Services",
     "contacts": "Contacts",
-    "rights": "© {year} AURORA. All rights reserved.",
+    "rights": "© {year} AURORRA. All rights reserved.",
     "policy": "Privacy policy",
     "terms": "Terms of use"
   },

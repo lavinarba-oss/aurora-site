@@ -73,7 +73,7 @@ export async function SiteFooter() {
 
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.4fr_repeat(3,1fr)] md:gap-8">
         <div className="flex flex-col gap-4">
-          <Link href="/" aria-label="AURORA">
+          <Link href="/" aria-label="AURORRA">
             <BrandMark size="lg" />
           </Link>
           <p className="max-w-xs text-sm text-muted-foreground">

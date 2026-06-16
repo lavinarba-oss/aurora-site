@@ -297,12 +297,14 @@ export function CasesOrbit() {
         })}
       </div>
 
-      {/* Bottom hint */}
-      <p className="pointer-events-none absolute inset-x-0 bottom-4 text-center text-[11px] uppercase tracking-[0.3em] text-muted-foreground/60">
-        {locale === "ru"
-          ? "Кликните по точке, чтобы открыть кейс"
-          : "Click a node to open a case"}
-      </p>
+      {/* Bottom hint — hidden while a case card is open so it never overlaps it */}
+      {expandedId === null && (
+        <p className="pointer-events-none absolute inset-x-0 -bottom-2 text-center text-[11px] uppercase tracking-[0.3em] text-muted-foreground/60">
+          {locale === "ru"
+            ? "Кликните по точке, чтобы открыть кейс"
+            : "Click a node to open a case"}
+        </p>
+      )}
     </div>
   );
 }

@@ -630,7 +630,7 @@ function DocumentScene({ accent, client }: { accent: string; client?: string }) 
           <span className="relative block h-2 w-1/2 rounded-full bg-[#0A0E27]/40" />
           <span className="relative mt-1.5 block h-1.5 w-1/3 rounded-full bg-[#0A0E27]/25" />
           <span className="absolute right-3 top-3 text-[7px] font-semibold text-[#0A0E27]/70">
-            AURORA
+            AURORRA
           </span>
         </div>
         {/* body */}
@@ -657,7 +657,7 @@ function DocumentScene({ accent, client }: { accent: string; client?: string }) 
         {/* footer signature */}
         <div className="absolute inset-x-3 bottom-2.5 flex items-center justify-between">
           <span className="h-1 w-1/4 rounded-full bg-white/10" />
-          <span className="text-[6px] text-white/30">{client ?? "AURORA"}</span>
+          <span className="text-[6px] text-white/30">{client ?? "AURORRA"}</span>
         </div>
       </div>
     </div>

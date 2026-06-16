@@ -6,7 +6,7 @@ import { asLocale, routing } from "@/i18n/routing";
 export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "AURORA — digital agency";
+export const alt = "AURORRA — digital agency";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -94,7 +94,7 @@ export default async function OpenGraphImage({
               boxShadow: "0 0 30px #B967FF",
             }}
           />
-          AURORA
+          AURORRA
         </div>
 
         {/* Headline */}

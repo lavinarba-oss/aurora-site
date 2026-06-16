@@ -4,7 +4,7 @@
  * Informed by a market analysis of Western (AKQA, R/GA, MetaLab, thoughtbot,
  * Work & Co, Clay…) and Russian (AGIMA, Red Collar, JetStyle, ADV/Lebedev,
  * Nimax…) digital agencies — pricing models, process language, ownership and
- * support norms — re-voiced honestly for AURORA. Answers are vendor-neutral
+ * support norms — re-voiced honestly for AURORRA. Answers are vendor-neutral
  * where it builds trust, and specific where clients actually need numbers.
  *
  * Bilingual (ru/en); rendered as grouped accordions on /faq.

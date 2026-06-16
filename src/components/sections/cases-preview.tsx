@@ -26,7 +26,7 @@ export async function CasesPreview() {
           <CasesOrbit />
         </div>
 
-        <Reveal className="-mt-4 flex justify-center">
+        <Reveal className="mt-10 flex justify-center">
           <Link
             href="/cases"
             className={cn(

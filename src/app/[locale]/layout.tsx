@@ -56,17 +56,17 @@ export async function generateMetadata({
     metadataBase: new URL("https://aurora.digital"),
     title: {
       default: isRu
-        ? "AURORA — Цифровое агентство полного цикла"
-        : "AURORA — Full-cycle digital agency",
-      template: "%s · AURORA",
+        ? "AURORRA — Цифровое агентство полного цикла"
+        : "AURORRA — Full-cycle digital agency",
+      template: "%s · AURORRA",
     },
     description: isRu
       ? "Сайты, CRM-системы, Telegram-боты, мобильные приложения. Помогаем бизнесу запускать продукты, которые работают."
       : "Websites, CRM systems, Telegram bots, mobile apps. We help businesses ship products that actually work.",
-    applicationName: "AURORA",
+    applicationName: "AURORRA",
     openGraph: {
       type: "website",
-      siteName: "AURORA",
+      siteName: "AURORRA",
       locale: isRu ? "ru_RU" : "en_US",
     },
     twitter: { card: "summary_large_image" },

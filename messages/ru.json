@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "AURORA",
+    "brand": "AURORRA",
     "tagline": "Цифровое агентство полного цикла",
     "cta": {
       "discuss": "Обсудить проект",
@@ -571,7 +571,7 @@
     "navigation": "Навигация",
     "services": "Услуги",
     "contacts": "Контакты",
-    "rights": "© {year} AURORA. Все права защищены.",
+    "rights": "© {year} AURORRA. Все права защищены.",
     "policy": "Политика конфиденциальности",
     "terms": "Условия использования"
   },

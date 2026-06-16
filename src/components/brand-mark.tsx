@@ -11,7 +11,7 @@ const sizeMap = {
   lg: { text: "text-2xl", mark: "h-10" },
 };
 
-/** AURORA logo — aurora-planet emblem + wordmark. Used in header and footer. */
+/** AURORRA logo — aurora-planet emblem + wordmark. Used in header and footer. */
 export function BrandMark({ className, size = "md" }: BrandMarkProps) {
   const s = sizeMap[size];
 
@@ -26,11 +26,11 @@ export function BrandMark({ className, size = "md" }: BrandMarkProps) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={assetPath("/brand/aurorra-emblem.png")}
-        alt="AURORA"
+        alt="AURORRA"
         className={cn("w-auto select-none", s.mark)}
         draggable={false}
       />
-      AURORA
+      AURORRA
     </span>
   );
 }

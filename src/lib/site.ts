@@ -26,7 +26,7 @@ export const NAV: NavItem[] = [
 ];
 
 export const SITE = {
-  brand: "AURORA",
+  brand: "AURORRA",
   email: "hi@aurora.digital",
   telegram: "https://t.me/aurora_digital",
   whatsapp: "https://wa.me/79999999999",
