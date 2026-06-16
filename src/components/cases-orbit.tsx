@@ -48,6 +48,30 @@ export function CasesOrbit() {
   const containerH = compact ? 500 : mid ? 680 : 760;
   const nodeSize = compact ? 40 : 48;
 
+  // The expanded case card can be taller than the static orbit. Measure it and
+  // grow the container so the card is never clipped — and the section below the
+  // orbit is pushed down accordingly.
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [extraH, setExtraH] = useState(0);
+  useEffect(() => {
+    if (expandedId === null) {
+      setExtraH(0);
+      return;
+    }
+    // On expand the clicked node always rotates to the top of the orbit, so the
+    // card's top is deterministic. Its own height (offsetHeight) is stable and
+    // unaffected by the in-flight rotation animation — so we avoid measuring a
+    // moving target.
+    const id = requestAnimationFrame(() => {
+      const card = cardRef.current;
+      if (!card) return;
+      const cardTop = containerH / 2 - radius - nodeSize / 2 + 96; // top-24
+      const need = cardTop + card.offsetHeight + 40; // breathing room
+      setExtraH(Math.max(0, Math.round(need - containerH)));
+    });
+    return () => cancelAnimationFrame(id);
+  }, [expandedId, containerH, radius, nodeSize, vw]);
+
   // Auto rotation
   useEffect(() => {
     if (!autoRotate) return;
@@ -93,8 +117,8 @@ export function CasesOrbit() {
     <div
       ref={containerRef}
       onClick={closeAll}
-      style={{ height: containerH }}
-      className="relative w-full overflow-hidden select-none"
+      style={{ height: containerH + extraH }}
+      className="relative w-full overflow-hidden select-none transition-[height] duration-300 ease-out"
     >
       {/* Hub */}
       <div
@@ -214,6 +238,7 @@ export function CasesOrbit() {
               {/* Expanded card */}
               {isExpanded && (
                 <div
+                  ref={cardRef}
                   className="absolute left-1/2 top-24 z-50 w-[80vw] max-w-xs -translate-x-1/2 overflow-visible rounded-2xl border border-white/[0.1] bg-card/95 p-5 shadow-[0_20px_60px_-12px_rgba(185,103,255,0.35)] backdrop-blur-xl sm:w-80 sm:max-w-none"
                   onClick={(e) => e.stopPropagation()}
                 >
