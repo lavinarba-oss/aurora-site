@@ -500,22 +500,22 @@
       "title": "Who makes it",
       "members": {
         "m1": {
-          "name": "Khaphol Afzal",
+          "name": "Kirill Chernousov",
           "role": "Founder · Product",
           "bio": "8 years in digital, from frontend to launching the agency. Owns strategy and client relations."
         },
         "m2": {
-          "name": "Anna Kaplan",
+          "name": "Anna Sokolova",
           "role": "Lead designer",
           "bio": "Design systems, brand, UX flows. On principle: no Tilda templates."
         },
         "m3": {
-          "name": "Mikhail Voronin",
+          "name": "Ruslan Barashkin",
           "role": "Tech Lead",
           "bio": "Next.js, NestJS, infra and architecture. Code-reviews every release."
         },
         "m4": {
-          "name": "Olga Sokolova",
+          "name": "Olga Voronina",
           "role": "Project Manager",
           "bio": "Missed deadlines are her personal grief. That's why we don't have them."
         }
